@@ -1,0 +1,31 @@
+body {
+    min-height: 100vh;
+    background-color: #aaa;
+}
+
+.spinner {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    margin: 20px;
+    border-radius: 50%;
+    border-top: 5px solid #ddd;
+    border-right: 5px solid #ddd;
+    border-bottom: 5px solid #ddd;
+    border-left: 5px solid #000;
+}
+
+.v1 {
+    animation: spinner 1s infinite linear;
+}
+
+@keyframes spinner {
+    100% {
+        /* transform jest najlepsze to robienia animacji, zwłaszcza translate bo jest najmniej obciążające */
+        transform: rotate(360deg);
+
+
+        /* border mocno znacznie mocniej obciąża procesor, jak mamy tylko 1 element który ma mieć animowany border to ok ale jak będzie kilka to animacja mocno straci na wyjdaności */
+        /* border-width: 10px;    */
+    }
+}
